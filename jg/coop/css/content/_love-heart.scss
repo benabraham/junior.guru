@@ -1,15 +1,15 @@
-@keyframes heartbeat {
+@keyframes heartbeat-double {
   0% {
-    font-size: map-get($spacers, 3);
-    color: $jg-pink;
+    scale: 1;
   }
-  50% {
-    font-size: map-get($spacers, 4);
-    color: $jg-pink-dark;
+  15% {
+    scale: 1.4;
   }
-  100% {
-    font-size: map-get($spacers, 3);
-    color: $jg-pink;
+  30% {
+    scale: 1;
+  }
+  to {
+    scale: 1;
   }
 }
 
@@ -21,11 +21,12 @@
   height: map-get($spacers, 4);
   font-size: map-get($spacers, 3);
   color: $jg-pink;
-  animation: heartbeat 3s ease-in-out infinite;
+  animation: heartbeat-double 1.5s ease-in-out infinite alternate;
+  transform-origin: center;
 }
 
 .love-heart:hover {
-  font-size: map-get($spacers, 4);
+  scale: 1.5;
   color: $jg-pink-dark;
   animation: none;
 }
