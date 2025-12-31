@@ -2,9 +2,9 @@
   @extend .badge;
   font-size: $font-size-base;
   font-weight: $font-weight-medium;
-  color: $jg-dark;
+  color: var(--jg-text-primary);
   user-select: none;
-  background: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
 }
 
 .candidates-tag-link {
@@ -30,9 +30,9 @@
   grid-template-columns: min-content 1fr;
   padding: map-get($spacers, 4);
   padding-top: map-get($spacers, 4) + .3rem;
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
   vertical-align: middle;
-  border: 2px solid $jg-blue;
+  border: 2px solid var(--jg-border-primary);
   border-radius: $border-radius;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .candidates-tags.noscript {
-  border-color: $jg-red;
+  border-color: var(--jg-text-error);
 }
 
 .candidates-tags::before {
@@ -51,19 +51,19 @@
   display: block;
   padding: 0 map-get($spacers, 2);
   font-size: $font-size-lg;
-  color: $jg-blue;
+  color: var(--jg-text-link);
   content: "Filtry";
-  background: $jg-white;
+  background-color: var(--jg-bg-page);
 }
 
 .candidates-tags.noscript::before {
-  color: $jg-red;
+  color: var(--jg-text-error);
 }
 
 .candidates-tags-heading {
   margin-right: $spacer;
   font-weight: $font-weight-normal;
-  color: $jg-gray;
+  color: var(--jg-text-secondary);
   white-space: nowrap;
 }
 
@@ -72,12 +72,12 @@
 }
 
 .candidates-tags .candidates-tag:hover {
-  color: $jg-blue;
+  color: var(--jg-text-link);
 }
 
 .candidates-tags .candidates-tag.active {
-  color: $jg-white;
-  background: $jg-blue;
+  color: var(--jg-text-inverse);
+  background-color: var(--jg-bg-active);
 }
 
 .candidates-tags .candidates-tag.disabled {
@@ -90,20 +90,21 @@
 }
 
 .candidates-list .candidates-tag {
-  background-color: $jg-white;
+  background-color: var(--jg-bg-page);
 }
 
 .candidates-item {
   position: relative;
   margin-bottom: $spacer;
-  background-color: $jg-blue-light;
-  border: 1px solid $jg-blue-light;
+  background-color: var(--jg-bg-primary);
+  border: 1px solid var(--jg-bg-primary);
   border-radius: $border-radius;
 }
 
 .candidates-item.highlighted {
-  background-color: $jg-yellow-light;
-  border-color: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-accent);
+  border-color: var(--jg-border-accent);
 }
 
 .candidates-item.muted {
@@ -111,7 +112,7 @@
 }
 
 .candidates-item.open {
-  border-color: $jg-blue;
+  border-color: var(--jg-border-primary);
 }
 
 .candidates-item-container {
@@ -126,7 +127,7 @@
   flex-shrink: 0;
   padding: .25rem;
   margin-right: $spacer;
-  background: $jg-white;
+  background-color: var(--jg-bg-page);
   border: 1px solid $border-color;
   border-radius: $border-radius;
 }
@@ -152,7 +153,7 @@
   @extend .fs-5;
   display: flex;
   margin-bottom: -1 * ($spacer - $headings-margin-bottom);
-  color: $jg-blue;
+  color: var(--jg-text-link);
 }
 
 .candidates-title-link,
@@ -166,13 +167,13 @@
 }
 
 .candidates-title-text {
-  color: $jg-dark;
+  color: var(--jg-text-primary);
 }
 
 .candidates-open,
 .candidates-close {
   padding: 0;
-  color: $jg-blue;
+  color: var(--jg-text-link);
   cursor: pointer;
   background: none;
   border: none;
@@ -181,7 +182,7 @@
 .candidates-debug {
   margin-left: $spacer;
   font-size: $font-size-sm;
-  color: $jg-red;
+  color: var(--jg-text-error);
 }
 
 .candidates-item:hover .candidates-title-link {
@@ -203,8 +204,8 @@
 }
 
 .candidates-item .candidates-tag.matching {
-  color: $jg-white;
-  background-color: $jg-dark;
+  color: var(--jg-text-inverse);
+  background-color: var(--jg-bg-dark);
 }
 
 .candidates-badges {
@@ -215,10 +216,10 @@
   @extend .badge;
   font-size: $font-size-sm;
   font-weight: $font-weight-normal;
-  color: $jg-dark;
+  color: var(--jg-text-primary);
   user-select: none;
   background-color: transparent;
-  border: 1px solid $jg-dark;
+  border: 1px solid var(--jg-text-primary);
 }
 
 .candidates-badge[title],
@@ -228,7 +229,7 @@
 }
 
 .candidates-badge-tooltip {
-  font-size: $font-size-xs;
+  font-size: $jg-font-size-xs;
 }
 
 // .candidates-badge.primary {
@@ -237,7 +238,7 @@
 
 // .candidates-badge.secondary {
 //   @extend .text-bg-secondary;
-//   background-color: $jg-gray;
+//   background-color: var(--jg-gray);
 // }
 
 .candidates-details {
@@ -288,7 +289,7 @@
   width: 100%;
   padding: $spacer;
   overflow: hidden;
-  background: $jg-white;
+  background-color: var(--jg-bg-page);
   border-radius: 0 0 $border-radius $border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -303,7 +304,7 @@
   overflow: hidden;
   font-size: $font-size-sm;
   text-align: center;
-  background: $jg-white;
+  background-color: var(--jg-bg-page);
   border-radius: 0 0 $border-radius $border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -354,7 +355,7 @@
 }
 
 .candidates-empty .note {
-  background-color: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
 }
 
 .candidates-subscribe {
@@ -369,7 +370,8 @@
   justify-content: center;
   width: 100%;
   padding: map-get($spacers, 2) $spacer;
-  background: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-highlight);
 }
 
 .candidates-subscribe-text {

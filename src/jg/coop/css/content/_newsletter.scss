@@ -1,6 +1,7 @@
 .newsletter {
   padding: $spacer;
-  background-color: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-highlight);
   border-radius: $border-radius;
 }
 
@@ -44,11 +45,11 @@
 
 .newsletter-note {
   @extend .form-text;
-  @extend .text-body-secondary;
+  color: var(--jg-text-secondary-on-highlight);
 }
 
 .newsletter-note a {
-  @extend .text-body-secondary;
+  color: var(--jg-text-secondary-on-highlight);
 }
 
 .newsletter-button {

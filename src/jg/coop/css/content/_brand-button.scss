@@ -15,8 +15,8 @@
 
 .brand-button.spotify {
   @include button-variant(
-    #1db954,
-    #1db954,
+    $jg-brand-spotify,
+    $jg-brand-spotify,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -26,8 +26,8 @@
 
 .brand-button.google {
   @include button-variant(
-    #4285f4,
-    #4285f4,
+    $jg-brand-google,
+    $jg-brand-google,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -37,8 +37,8 @@
 
 .brand-button.microsoft {
   @include button-variant(
-    #0083bf,
-    #0083bf,
+    $jg-brand-microsoft,
+    $jg-brand-microsoft,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -48,8 +48,8 @@
 
 .brand-button.apple-podcasts {
   @include button-variant(
-    #872ec4,
-    #872ec4,
+    $jg-brand-apple-podcasts,
+    $jg-brand-apple-podcasts,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -59,8 +59,8 @@
 
 .brand-button.apple {
   @include button-variant(
-    #000,
-    #000,
+    $jg-black,
+    $jg-black,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -70,8 +70,8 @@
 
 .brand-button.youtube {
   @include button-variant(
-    #f00,
-    #f00,
+    $jg-brand-youtube,
+    $jg-brand-youtube,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -81,8 +81,8 @@
 
 .brand-button.rss {
   @include button-variant(
-    #f26522,
-    #f26522,
+    $jg-brand-rss,
+    $jg-brand-rss,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -92,8 +92,8 @@
 
 .brand-button.discord {
   @include button-variant(
-    #5865f2,
-    #5865f2,
+    $jg-brand-discord,
+    $jg-brand-discord,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -103,8 +103,8 @@
 
 .brand-button.buttondown {
   @include button-variant(
-    #046afe,
-    #046afe,
+    $jg-brand-buttondown,
+    $jg-brand-buttondown,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,
@@ -125,8 +125,8 @@
 
 .brand-button.calendar {
   @include button-variant(
-    #4285f4,
-    #4285f4,
+    $jg-brand-google,
+    $jg-brand-google,
     $jg-white,
     $hover-color: $jg-white,
     $active-color: $jg-white,

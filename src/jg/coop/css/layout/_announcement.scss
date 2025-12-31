@@ -4,18 +4,18 @@
   padding: map-get($spacers, 1);
   text-align: center;
   text-decoration: none;
-  background: $link-color;
+  background-color: var(--bs-link-color);
 }
 
 .announcement,
 .announcement:hover,
 .announcement:focus,
 .announcement:active {
-  color: $white;
+  color: var(--bs-white);
 }
 
 .announcement:hover,
 .announcement:focus,
 .announcement:active {
-  background: $link-hover-color;
+  background-color: var(--bs-link-hover-color);
 }

@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: $spacer;
   padding: $spacer;
-  background: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
   border-radius: $border-radius;
 }
 
@@ -15,5 +15,5 @@
 }
 
 .note-explainer-item .bi {
-  color: $jg-blue;
+  color: var(--jg-text-link);
 }

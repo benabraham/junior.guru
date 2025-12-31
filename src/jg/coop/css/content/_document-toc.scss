@@ -2,8 +2,8 @@
   position: relative;
   padding: map-get($spacers, 4);
   padding-top: map-get($spacers, 4) + .3rem;
-  margin-bottom: $main-spacer;
-  border: 2px solid $jg-blue;
+  margin-bottom: $jg-main-spacer;
+  border: 2px solid var(--jg-border-primary);
   border-radius: $border-radius;
 }
 
@@ -14,9 +14,9 @@
   display: block;
   padding: 0 map-get($spacers, 2);
   font-size: $font-size-lg;
-  color: $jg-blue;
+  color: var(--jg-text-link);
   content: "Obsah";
-  background: $jg-white;
+  background-color: var(--jg-bg-page);
 }
 
 .document-toc ul {
@@ -30,6 +30,6 @@
 }
 
 .document-toc a {
-  color: $jg-gray;
+  color: var(--jg-text-secondary);
   text-decoration-style: dotted;
 }

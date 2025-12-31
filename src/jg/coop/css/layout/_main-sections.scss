@@ -6,12 +6,12 @@
 
 .section {
   @extend .container-lg;
-  padding-top: $main-spacer - $spacer;
-  padding-bottom: $main-spacer - $spacer;
+  padding-top: $jg-main-spacer - $spacer;
+  padding-bottom: $jg-main-spacer - $spacer;
 }
 
 .section.standout {
-  padding: $main-spacer 0;
+  padding: $jg-main-spacer 0;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -21,27 +21,29 @@
 }
 
 .section-background.dark {
-  color: $white;
-  background: $jg-dark;
+  color: var(--bs-white);
+  background-color: var(--jg-bg-dark);
 }
 
 .section-background.blue {
-  color: $white;
-  background: $jg-blue;
+  color: var(--bs-white);
+  background-color: var(--jg-bg-active);
 }
 
 .section-background.blue-light {
-  background: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
 }
 
 .section-background.yellow {
-  background: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-highlight);
 }
 
 .section-background.yellow-light {
-  background: $jg-yellow-light;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-accent);
 }
 
 .section-background.gray-white {
-  background: $jg-gray-white;
+  background-color: var(--jg-bg-secondary);
 }

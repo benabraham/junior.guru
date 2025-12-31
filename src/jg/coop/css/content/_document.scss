@@ -2,13 +2,13 @@
 
 @keyframes headerlink-highlight {
   0% {
-    color: $primary;
+    color: var(--jg-primary);
   }
   50% {
-    color: $primary;
+    color: var(--jg-primary);
   }
   100% {
-    color: $body-color;
+    color: var(--bs-body-color);
   }
 }
 
@@ -21,32 +21,32 @@
 
 .document > h1 {
   padding-bottom: map-get($spacers, 1);
-  margin-bottom: $main-spacer;
-  border-bottom: map-get($border-widths, 3) solid $body-color;
+  margin-bottom: $jg-main-spacer;
+  border-bottom: map-get($border-widths, 3) solid var(--bs-body-color);
 }
 
 .document > .lead {
-  margin-bottom: $main-spacer;
+  margin-bottom: $jg-main-spacer;
 }
 
 .document > h2 {
-  margin-top: $main-spacer;
+  margin-top: $jg-main-spacer;
 }
 
 .document > h3 {
-  margin-top: $document-spacer;
+  margin-top: $jg-document-spacer;
 }
 
 .document > p a[role=""]:visited {
   // skips role="button"
-  color: $body-color;
+  color: var(--bs-body-color);
 }
 
 .document > h2 .bi {
   @extend .fs-3;
   margin-right: map-get($spacers, 1);
   line-height: $headings-line-height;
-  color: $primary;
+  color: var(--jg-primary);
 }
 
 .document > *:last-child {
@@ -60,21 +60,21 @@
 .document small,
 .document small a,
 .document small a:visited {
-  color: $body-secondary-color;
+  color: var(--bs-secondary-color);
 }
 
 .document .headerlink,
 .document .headerlink:visited {
   margin-left: $spacer;
   font-size: $small-font-size;
-  color: $jg-gray-light;
+  color: var(--jg-border-default);
   text-decoration: none;
 }
 
 .document .headerlink:hover,
 .document .headerlink:focus,
 .document .headerlink:active {
-  color: $primary;
+  color: var(--jg-primary);
 }
 
 .document > h1 .headerlink {
@@ -103,21 +103,21 @@
 
 .blockquote-container,
 .jobs-inline {
-  margin-top: $document-spacer;
-  margin-bottom: $document-spacer;
+  margin-top: $jg-document-spacer;
+  margin-bottom: $jg-document-spacer;
 }
 
 .link-cards,
 .stories {
-  margin-top: $document-spacer;
-  margin-bottom: $document-spacer - $spacer;
+  margin-top: $jg-document-spacer;
+  margin-bottom: $jg-document-spacer - $spacer;
 }
 
 [popover] {
   padding: 0 .5rem;
   font-size: $small-font-size;
-  color: $jg-white;
-  background: $jg-dark;
+  color: var(--jg-text-inverse);
+  background-color: var(--jg-bg-dark);
   border: none;
   border-radius: $border-radius;
 }

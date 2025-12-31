@@ -21,7 +21,8 @@
   margin-bottom: $spacer;
   text-align: center;
   white-space: nowrap;
-  background: $white;
+  color: var(--jg-text-primary);
+  background-color: var(--jg-bg-card);
   border-radius: $border-radius-lg;
 
   @include media-breakpoint-up(md) {
@@ -55,7 +56,7 @@
 
 .pricing-benefits .bi {
   margin-right: map-get($spacers, 1);
-  @extend .text-success;
+  color: var(--jg-text-success);
 }
 
 .pricing-benefits-item.price {
@@ -71,6 +72,6 @@
 
 .pricing-note,
 .pricing-note a {
-  @extend .text-muted;
+  color: var(--jg-text-secondary-on-highlight);
   white-space: normal;
 }

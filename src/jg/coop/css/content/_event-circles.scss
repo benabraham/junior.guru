@@ -1,5 +1,5 @@
-$event-circle-width-sm: map-get($spacers, 5);
-$event-circle-width-md: map-get($spacers, 5) * 1.5;
+$jg-event-circle-width-sm: map-get($spacers, 5);
+$jg-event-circle-width-md: map-get($spacers, 5) * 1.5;
 
 .event-circles {
   @extend .list-unstyled;
@@ -35,13 +35,13 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
 .event-circles-item img,
 .event-circles-link::before {
   display: block;
-  width: $event-circle-width-sm;
-  height: $event-circle-width-sm;
+  width: $jg-event-circle-width-sm;
+  height: $jg-event-circle-width-sm;
   border-radius: 100%;
 
   @include media-breakpoint-up(md) {
-    width: $event-circle-width-md;
-    height: $event-circle-width-md;
+    width: $jg-event-circle-width-md;
+    height: $jg-event-circle-width-md;
   }
 }
 
@@ -76,7 +76,7 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
   top: 0;
   left: center;
   content: "";
-  background-color: rgba($link-color, .8);
+  background-color: color-mix(in srgb, var(--bs-link-color) 80%, transparent);
   background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23fff' viewBox='0 0 16 16'><path d='m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z'/></svg>");
   background-repeat: no-repeat;
   background-position: left 55% top 50%;
@@ -84,7 +84,7 @@ $event-circle-width-md: map-get($spacers, 5) * 1.5;
 }
 
 .event-circles-link:hover::before {
-  background-color: rgba($link-hover-color, .8);
+  background-color: color-mix(in srgb, var(--bs-link-hover-color) 80%, transparent);
 }
 
 .event-circles-link h3 {

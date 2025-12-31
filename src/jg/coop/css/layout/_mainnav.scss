@@ -1,6 +1,7 @@
 .mainnav {
   @extend .navbar;
-  background-color: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-highlight);
 }
 
 .mainnav-container {
@@ -22,7 +23,7 @@
   width: 100vw;
   margin-right: $container-padding-x * -.5;
   margin-left: $container-padding-x * -.5;
-  border-top: 1px solid $jg-yellow-dark;
+  border-top: 1px solid var(--jg-border-highlight);
   @include font-size($font-size-sm);
 
   @include media-breakpoint-up(md) {

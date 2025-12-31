@@ -5,6 +5,7 @@
   and https://logo.junior.guru/
 */
 
+// SCSS variables - used for Bootstrap configuration and SCSS color functions
 $jg-yellow: #fffa72;
 $jg-yellow-dark: #e5df67;
 $jg-yellow-light: lighten($jg-yellow, 22.2%);
@@ -22,17 +23,27 @@ $jg-pink-dark: darken($jg-pink, 5%);
 $jg-red: #dc3545;
 $jg-green: #198754;
 
-$jg-yellow-light-legacy: #fffee3; // equals to lighten($jg-yellow, 22.2%)
-$jg-gray-light-legacy: darken($jg-white, 20%);
+// Additional palette colors
+$jg-blue-lighter: lighten($jg-blue-light, 1%);
+$jg-blue-light-border: darken($jg-blue-light, 2%);
+$jg-dark-lighter: lighten($jg-dark, 5%);
 
+// Brand colors
+$jg-brand-spotify: #1db954;
+$jg-brand-google: #4285f4;
+$jg-brand-microsoft: #0083bf;
+$jg-brand-apple-podcasts: #872ec4;
+$jg-brand-youtube: #f00;
+$jg-brand-rss: #f26522;
+$jg-brand-discord: #5865f2;
+$jg-brand-buttondown: #046afe;
 /*
   CHANGING BOOTSTRAP DEFAULTS
 */
 
 /* stylelint-disable */
-$font-family-sans-serif:
-  "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-sans-serif: "Inter", "Helvetica Neue", "Helvetica", "Arial", sans-serif,
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 /* stylelint-enable */
 
 $white: $jg-white;

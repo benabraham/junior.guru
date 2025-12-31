@@ -1,12 +1,13 @@
 .details {
   @extend .card;
-  background: $jg-blue-light;
-  border-color: $jg-white;
+  background-color: var(--jg-bg-primary);
+  border-color: var(--jg-bg-page);
 }
 
 .highlighted.details {
-  background-color: $jg-yellow-light;
-  border: 1px solid $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-accent);
+  border: 1px solid var(--jg-border-accent);
 }
 
 .details-header {
@@ -20,7 +21,7 @@
   width: auto;
   height: 6rem;
   padding: $spacer;
-  background-color: $jg-white;
+  background-color: var(--jg-bg-page);
   border-radius: $border-radius;
 }
 
@@ -68,7 +69,7 @@
 .details-thumbnail {
   width: 100%;
   height: auto;
-  border: 1px solid $jg-gray-light;
+  border: 1px solid var(--jg-border-default);
   border-radius: $border-radius;
 }
 

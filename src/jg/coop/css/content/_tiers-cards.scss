@@ -8,8 +8,8 @@
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
-  background: lighten($jg-blue-light, 1%);
-  border: 1px solid $jg-blue-light;
+  background-color: var(--jg-bg-card);
+  border: 1px solid var(--jg-bg-primary);
 }
 
 .tiers-cards .tiers-card {
@@ -36,8 +36,8 @@
 .tiers-card-header {
   @extend .card-header;
   @extend .fs-5;
-  background: $jg-blue-light;
-  border-color: darken($jg-blue-light, 2%);
+  background-color: var(--jg-bg-primary);
+  border-color: var(--jg-border-card);
 }
 
 .tiers-card.soldout {
@@ -51,8 +51,8 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: 0;
-  background-color: $jg-blue-light;
-  border-color: darken($jg-blue-light, 2%);
+  background-color: var(--jg-bg-primary);
+  border-color: var(--jg-border-card);
 }
 
 .tier-card-footer small {

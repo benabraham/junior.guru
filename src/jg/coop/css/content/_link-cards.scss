@@ -22,13 +22,14 @@
   @extend .card;
   width: 100%;
   overflow: hidden;
-  background: $jg-blue-light;
-  border: 1px solid $jg-blue-light;
+  background-color: var(--jg-bg-primary);
+  border: 1px solid var(--jg-bg-primary);
 }
 
 .link-card.highlighted {
-  background: $jg-yellow;
-  border-color: $jg-yellow;
+  color: var(--jg-text-on-highlight);
+  background-color: var(--jg-bg-highlight);
+  border-color: var(--jg-border-accent);
 }
 
 .link-card-image {
@@ -65,16 +66,28 @@
   margin: 0;
 }
 
-.link-card-title a:visited {
-  color: $link-color;
-}
-.link-card-title a:visited:hover {
-  color: $link-hover-color;
-}
-
 .link-card-link {
   @extend .stretched-link;
   text-decoration: none;
+
+  &,
+  &:visited {
+    color: var(--bs-link-color);
+
+    .link-card.highlighted & {
+      color: var(--jg-link-on-highlight);
+    }
+  }
+
+  &,
+  &:visited:hover {
+    color: var(--bs-link-hover-color);
+
+    .link-card.highlighted & {
+      color: var(--jg-link-on-highlight-hover);
+    }
+
+  }
 }
 
 .link-card-link:hover,

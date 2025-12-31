@@ -1,4 +1,4 @@
-$sponsor-avatar-size: 2.5rem;
+$jg-sponsor-avatar-size: 2.5rem;
 
 .sponsor-avatars {
   @extend .list-unstyled;
@@ -25,12 +25,12 @@ $sponsor-avatar-size: 2.5rem;
 
 .sponsor-avatars-caption,
 .sponsor-avatars-caption a {
-  @extend .text-body-secondary;
+  color: var(--jg-text-secondary);
 }
 
 .sponsor-avatars img {
-  width: $sponsor-avatar-size;
-  height: $sponsor-avatar-size;
-  background: $white;
+  width: $jg-sponsor-avatar-size;
+  height: $jg-sponsor-avatar-size;
+  background-color: var(--bs-white);
   border-radius: 100%;
 }

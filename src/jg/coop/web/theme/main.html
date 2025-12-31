@@ -1,20 +1,72 @@
-{% extends 'main_legacy.html' %}
+<!DOCTYPE html>
+<!--
+
+  Ahoj! Zajima te, jak je junior.guru udelane? Mrkni na https://github.com/juniorguru/junior.guru/
+  Diky sve zvědavosti navic ziskаvas 5% slevu na objednavku clenstvi v klubu https://junior.guru/club/ :)
+  Staci pri registraci zadat kupon „ZVEDAVOST"
+
+-->
+<html lang="cs" data-updated-at="{{ now }}">
+  <head prefix="og: https://ogp.me/ns# website: https://ogp.me/ns/website#">
+    <meta charset="utf-8">
+    {% block canonical %}<link rel="canonical" href="{{ page.canonical_url }}">{% endblock canonical %}
+
+    {% if page %}
+      <title>{{ page.meta.title }}</title>
+    {% else %}
+      <title>Stránka neexistuje</title>
+    {% endif %}
+
+    {% block meta %}
+      {% if page and page.meta.noindex %}<meta name="robots" content="noindex">{% endif %}
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Accept-CH" content="DPR,Viewport-Width,Width,Save-Data">
+
+      <link rel="dns-prefetch" href="https://sa.junior.guru">
+
+      <script>
+      (function() {
+        var s = localStorage.getItem('jg-theme')
+        var p = window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.setAttribute('data-bs-theme',
+          s === 'light' || s === 'dark' ? s : (p ? 'dark' : 'light'))
+      })()
+      </script>
+      <link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">
+      <link rel="preload" href="{{ ('static/assets/bootstrap-icons.woff2')|url }}" as="font" type="font/woff2" crossorigin="anonymous">
+      <script defer src="{{ 'static/js/index.js'|url }}"></script>
+
+      {% if page %}
+        <meta property="og:title" content="{{ page.meta.title }}">
+        <meta property="og:url" content="{{ page.canonical_url }}">
+      {% endif %}
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="cs_CZ">
+
+      <link href="https://mastodonczech.cz/@honzajavorek" rel="me">
+      <meta name="fediverse:creator" content="@honzajavorek@mastodonczech.cz">
+      <meta name="twitter:creator" content="@honzajavorek">
+
+      {% if thumbnail_url %}
+      <meta property="og:image" content="{{ thumbnail_url }}">
+      <meta property="og:image:width" content="1200">
+      <meta property="og:image:height" content="630">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:image" content="{{ thumbnail_url }}">
+      {% endif %}
+
+      {% if page and page.meta.description %}<meta name="description" content="{{ page.meta.description }}">{% endif %}
+    {% endblock meta %}
+  </head>
 {% from 'macros.html' import img with context %}
-
-
-{% block stylesheet %}
-<link rel="stylesheet" href="{{ 'static/css/index.css'|url }}">{% endblock %}
-
-
-{% block body %}
 <body>
   {#
   <a href="https://ep2025.europython.eu/beginners-day-unconference/" class="announcement" target="_blank" rel="noopener">
-    <strong>ZAČÍNÁŠ V IT?</strong>
-    V Praze bude 19.7. den plný diskuzí, workshopů a přednášek. Přijď taky!
+    <strong>ZACINAS V IT?</strong>
+    V Praze bude 19.7. den plny diskuzi, workshopu a prednasek. Prijď taky!
   </a>
   #}
-  <header id="header" class="mainnav">
+  <header id="header" class="mainnav sticky-top">
     <nav class="mainnav-container">
       <a class="mainnav-brand" href="{{ pages|docs_url('index.jinja')|url }}">
         {{ img('static/logo.svg', 'logo junior.guru', 90, 40, lazy=False) }}
@@ -25,6 +77,9 @@
           {{ 'heart-fill'|icon }}
         </a>
         {% endif %}
+        <button type="button" class="theme-toggle" aria-label="Motiv: automaticky" title="Motiv: automaticky">
+          {{ 'circle-half'|icon }}
+        </button>
       </div>
       {% if nav %}
       <ul class="mainnav-items">
@@ -65,7 +120,7 @@
           <li class="footer-address-item">
             <h3 class="footer-subheading">Projekt</h3>
             Junior Guru<br>
-            stylizovaně „junior.guru“<br>
+            stylizovaně „junior.guru"<br>
             <a href="https://logo.junior.guru/" target="_blank" rel="noopener">logo a barvy</a>
           </li>
           <li class="footer-address-item">
@@ -140,13 +195,13 @@
         </div>
         <div class="footer-about-finances">
           <h4 class="footer-subheading">Můj aktuální čistý zisk</h4>
-          <p class="footer-finances-number">{{ profit_ttm|thousands }} Kč měsíčně</p>
+          <p class="footer-finances-number">{{ profit_ttm|thousands }} Kč měsíčně</p>
 
           <h4 class="footer-subheading">Zdroje příjmů, zaokrouhleno</h4>
           <ul class="footer-finances-list">
             {% for name, value_pct in revenue_ttm_breakdown|money_breakdown_ptc|revenue_categories %}
             <li>
-              <strong class="footer-finances-value">{{ value_pct }} %</strong>
+              <strong class="footer-finances-value">{{ value_pct }} %</strong>
               {{ name }}
             </li>
             {% endfor %}
@@ -161,7 +216,7 @@
     </div>
     <div class="footer-nav-container">
       <nav class="footer-section footer-nav">
-        <h3 class="footer-heading">Buď v obraze</h3>
+        <h3 class="footer-heading">Buď v obraze</h3>
         <p>
           {% for nav_item in (nav|selectattr('title', 'equalto', 'Inspirace')|list)[0].children %}
           {%- if nav_item.children -%}
@@ -211,7 +266,7 @@
       <h3 class="visually-hidden">Pravidla</h3>
       <ul class="footer-rules-list">
         <li class="footer-rules-item">
-          <a href="{{ pages|docs_url('about/index.md')|url }}">Čísla a grafy</a>
+          <a href="{{ pages|docs_url('about/index.md')|url }}">Čísla a grafy</a>
         </li>
         <li class="footer-rules-item">
           <a href="{{ pages|docs_url('coc.md')|url }}">Pravidla chování</a>
@@ -237,8 +292,8 @@
 
   <dialog class="discord-dialog">
     <p>
-      Odkaz vede do <strong>klubu</strong> na sociální síti <strong>Discord</strong>, kam mají přístup jen členové.
-      Pokud v klubu nejsi, neotevře se ti to správně.
+      Odkaz vede do <strong>klubu</strong> na sociální síti <strong>Discord</strong>, kam mají přístup jen členové.
+      Pokud v klubu nejsi, neotevře se ti to správně.
     </p>
     <a class="discord-dialog-continue">
       Otevřít
@@ -248,4 +303,4 @@
     </a>
   </dialog>
 </body>
-{% endblock %}
+</html>

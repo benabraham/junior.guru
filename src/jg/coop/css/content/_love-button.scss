@@ -1,15 +1,15 @@
 @keyframes heartbeat {
   0% {
     font-size: map-get($spacers, 3);
-    color: $jg-pink;
+    color: var(--jg-text-accent);
   }
   50% {
     font-size: map-get($spacers, 4);
-    color: $jg-pink-dark;
+    color: var(--jg-text-accent-hover);
   }
   100% {
     font-size: map-get($spacers, 3);
-    color: $jg-pink;
+    color: var(--jg-text-accent);
   }
 }
 

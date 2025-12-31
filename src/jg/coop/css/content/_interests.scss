@@ -1,6 +1,6 @@
 @use "sass:math";
 
-$interests-shades: 7;
+$jg-interests-shades: 7;
 
 .interests {
   @extend .list-unstyled;
@@ -16,20 +16,35 @@ $interests-shades: 7;
   width: 10em;
   padding: $spacer;
   text-align: center;
-  border: 1px solid $jg-yellow;
+  border: 1px solid var(--jg-border-accent);
   border-radius: $border-radius;
+
+  [data-bs-theme="dark"] & {
+    border-color: var(--jg-border-primary);
+  }
+
 }
 
-@for $i from 1 through $interests-shades {
+@for $i from 1 through $jg-interests-shades {
   .interests-item.shade-#{$i} {
-    background-color:
-      mix(
-        $jg-white,
-        $jg-yellow,
-        math.div($i, $interests-shades) * 100%
+    // shade-1 = ~14% page bg (mostly yellow), shade-7 = 100% page bg (white)
+    background-color: color-mix(
+                    in srgb,
+                    var(--jg-yellow),
+                    var(--jg-bg-page) #{math.round(math.div($i, $jg-interests-shades) * 100%)}
+    );
+
+    [data-bs-theme="dark"] & {
+      // shade-1 = 0% page bg (full primary), shade-7 = ~100% page bg
+      background-color: color-mix(
+                      in srgb,
+                      var(--jg-bg-primary),
+                      var(--jg-bg-page) #{math.round(math.div($i - 1, $jg-interests-shades - 1) * 100%)}
       );
+    }
   }
 }
+
 
 .interests-icon-container {
   display: flex;
@@ -38,9 +53,14 @@ $interests-shades: 7;
   width: 4rem;
   height: 4rem;
   margin: 0 auto $spacer;
-  background: $jg-white;
-  border: 1px solid $jg-yellow;
+  background-color: var(--jg-bg-page);
+  border: 1px solid var(--jg-border-accent);
   border-radius: 50%;
+
+  [data-bs-theme="dark"] & {
+    border-color: var(--jg-border-primary);
+  }
+
 }
 
 .interests-icon {
@@ -49,6 +69,11 @@ $interests-shades: 7;
   height: 2rem;
   filter: brightness(0) saturate(100%);
   opacity: .8;
+
+  [data-bs-theme="dark"] & {
+    filter: brightness(0) invert(1) saturate(0);
+  }
+
 }
 
 .interests-name {

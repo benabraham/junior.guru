@@ -46,7 +46,8 @@
 
   th:nth-child(2),
   td:nth-child(2) {
-    background: $jg-yellow;
+    color: var(--jg-text-on-highlight);
+    background-color: var(--jg-bg-highlight);
   }
 
   th:nth-child(2) {

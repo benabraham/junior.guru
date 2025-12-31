@@ -32,15 +32,15 @@
 }
 
 .stories-title a:visited {
-  color: $link-color;
+  color: var(--bs-link-color);
 }
 
 .stories-title a:visited:hover {
-  color: $link-hover-color;
+  color: var(--bs-link-hover-color);
 }
 
 .stories-details {
   @extend .small;
-  @extend .text-body-secondary;
+  color: var(--jg-text-secondary);
   margin: 0;
 }

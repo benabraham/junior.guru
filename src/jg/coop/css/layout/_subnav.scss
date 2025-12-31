@@ -1,21 +1,19 @@
-$subnav-link-padding-y: ($nav-link-padding-y * .5);
-$subnav-border-color: $border-color;
-$subnav-hover-border-color: $border-color;
+$jg-subnav-link-padding-y: ($nav-link-padding-y * .5);
 
 .subnav {
   @extend .navbar;
   @extend .navbar-dark;
-  background-color: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
 
   @include media-breakpoint-up(sm) {
     padding-bottom: 0;
-    border-bottom: $nav-tabs-border-width solid $subnav-border-color;
+    border-bottom: $nav-tabs-border-width solid var(--bs-border-color);
   }
 }
 
 .subnav-container {
   @extend .container;
-  max-width: $main-document-width;
+  max-width: $jg-main-document-width;
 }
 
 .subnav-items {
@@ -36,7 +34,11 @@ $subnav-hover-border-color: $border-color;
 
 .subnav-link {
   @extend .nav-link;
-  padding: $subnav-link-padding-y $nav-link-padding-x;
+  // overrides needed because $nav-link-color: $jg-dark; (and same for hover/focus) in _defaults.scss
+  --bs-nav-link-color: var(--bs-nav-link-color);
+  --bs-nav-link-hover-color: var(--bs-nav-link-hover-color);
+
+  padding: $jg-subnav-link-padding-y $nav-link-padding-x;
   border: $nav-tabs-border-width solid transparent;
   transition: none;
 
@@ -48,7 +50,7 @@ $subnav-hover-border-color: $border-color;
 }
 
 .subnav-link:hover {
-  border-color: $subnav-hover-border-color;
+  border-color: var(--bs-border-color);
   border-radius: $nav-pills-border-radius;
 
   @include media-breakpoint-up(sm) {
@@ -60,16 +62,16 @@ $subnav-hover-border-color: $border-color;
 
 .subnav-link.active {
   font-weight: 700;
-  background-color: $jg-white;
-  border-color: $subnav-border-color;
+  background-color: var(--jg-bg-page);
+  border-color: var(--bs-border-color);
   border-radius: $nav-pills-border-radius;
 
   @include media-breakpoint-up(sm) {
-    padding-top: $subnav-link-padding-y + .1rem;
-    padding-bottom: $subnav-link-padding-y - .1rem;
+    padding-top: $jg-subnav-link-padding-y + .1rem;
+    padding-bottom: $jg-subnav-link-padding-y - .1rem;
     background-color: $nav-tabs-link-active-bg;
-    border-color: $subnav-border-color;
-    border-bottom: $nav-tabs-border-width solid $jg-white;
+    border-color: var(--bs-border-color);
+    border-bottom: $nav-tabs-border-width solid var(--jg-bg-page);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -77,6 +79,6 @@ $subnav-hover-border-color: $border-color;
 
 .subnav-link.active:hover {
   @include media-breakpoint-up(sm) {
-    border-bottom: $nav-tabs-border-width solid $jg-white;
+    border-bottom: $nav-tabs-border-width solid var(--jg-bg-page);
   }
 }

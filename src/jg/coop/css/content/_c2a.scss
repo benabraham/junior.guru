@@ -3,9 +3,9 @@
   flex-direction: column;
   gap: $spacer;
   align-items: center;
-  padding: $main-spacer $spacer;
+  padding: $jg-main-spacer $spacer;
   margin: 0;
-  background: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
   border-radius: $border-radius;
 }
 
@@ -40,6 +40,6 @@
   line-height: 1;
 
   &.blue strong {
-    color: $jg-blue;
+    color: var(--jg-text-link);
   }
 }

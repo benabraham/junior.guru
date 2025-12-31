@@ -8,12 +8,12 @@
   @extend .card;
   margin: 0 0 map-get($spacers, 4);
   overflow: hidden;
-  background: $jg-blue-light;
+  background-color: var(--jg-bg-primary);
   border: 1px solid transparent;
 }
 
 .news-card.muted {
-  background: transparent;
+  background-color: transparent;
 }
 
 .news-cards .news-card {
@@ -40,13 +40,13 @@
 }
 
 .news-card:hover {
-  background: lighten($jg-blue-light, 1%);
-  border-color: $jg-blue-light;
+  background-color: var(--jg-bg-card);
+  border-color: var(--jg-bg-primary);
   transition: $transition-base;
 }
 
 .news-card.muted:hover {
-  background: transparent;
+  background-color: transparent;
   border-color: transparent;
 }
 
@@ -74,10 +74,10 @@
 .news-card-header {
   @extend .card-header;
   font-family: $font-family-monospace;
-  color: $body-secondary-color;
+  color: var(--bs-secondary-color);
   text-transform: uppercase;
-  background: $jg-white;
-  border-color: $jg-blue-light;
+  background-color: var(--jg-bg-page);
+  border-color: var(--jg-bg-primary);
 }
 
 .news-card-media {
@@ -111,10 +111,11 @@
 }
 
 .news-card-title a:visited {
-  color: $link-color;
+  color: var(--bs-link-color);
 }
+
 .news-card-title a:visited:hover {
-  color: $link-hover-color;
+  color: var(--bs-link-hover-color);
 }
 
 .news-card-link {

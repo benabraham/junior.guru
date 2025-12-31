@@ -3,7 +3,7 @@
   padding-top: map-get($spacers, 5);
   margin: map-get($spacers, 5) 0;
   margin-top: map-get($spacers, 5) + .5rem;
-  border-top: 2px solid $body-color;
+  border-top: 2px solid var(--bs-body-color);
 }
 
 .document-section-heading {
@@ -15,7 +15,7 @@
   top: 0;
   padding-right: $spacer;
   font-weight: $font-weight-normal;
-  color: $body-color;
-  background: $jg-white;
+  color: var(--bs-body-color);
+  background-color: var(--jg-bg-page);
   transform: translate(0, -50%);
 }

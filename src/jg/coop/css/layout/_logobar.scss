@@ -1,10 +1,10 @@
 .logobar {
   width: 100%;
-  background: $white;
-  border-bottom: 1px solid $jg-gray-light;
+  background-color: var(--jg-bg-page);
+  border-bottom: 1px solid var(--jg-border-default);
 
   @include media-breakpoint-up(lg) {
-    background: linear-gradient(90deg, $jg-blue-light 50%, $white 50%);
+    background-image: linear-gradient(90deg, var(--jg-bg-primary) 50%, var(--jg-bg-page) 50%);
   }
 }
 
@@ -23,12 +23,12 @@
   @include media-breakpoint-up(lg) {
     flex-grow: 1;
     flex-shrink: 0;
-    min-width: $main-toc-width;
+    min-width: $jg-main-toc-width;
   }
 
   @include media-breakpoint-up(xxl) {
     flex-grow: 0;
-    width: $main-toc-width;
+    width: $jg-main-toc-width;
   }
 }
 
@@ -37,10 +37,10 @@
   flex-wrap: nowrap;
   justify-content: space-evenly;
   width: 100%;
-  max-width: $main-document-width;
+  max-width: $jg-main-document-width;
   padding: 0 $spacer;
   margin-bottom: 0;
-  background: $white;
+  background-color: var(--jg-bg-page);
 
   @include media-breakpoint-up(lg) {
     justify-content: space-evenly;

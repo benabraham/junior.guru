@@ -1,12 +1,12 @@
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 rgba($jg-dark, .2);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--jg-shadow-color) 20%, transparent);
   }
   70% {
-    box-shadow: 0 0 0 map-get($spacers, 4) rgba($jg-dark, 0);
+    box-shadow: 0 0 0 map-get($spacers, 4) color-mix(in srgb, var(--jg-shadow-color) 0%, transparent);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba($jg-dark, 0);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--jg-shadow-color) 0%, transparent);
   }
 }
 
