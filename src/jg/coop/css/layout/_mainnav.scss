@@ -1,6 +1,7 @@
 .mainnav {
   @extend .navbar;
   background-color: $jg-yellow;
+  z-index: $zindex-fixed;
 }
 
 .mainnav-container {
