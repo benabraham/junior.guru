@@ -1,13 +1,38 @@
 # Logos
 
-Various logos of companies and communities used throughout the project (HTML images, website…). Ideally SVGs. 
+Various logos of companies and communities used throughout the project (HTML images, website…). Ideally SVGs.
 
-## Workflow for adding SVGs
+## Automated workflow (recommended)
+
+Requires Inkscape installed (`inkscape --version` to verify).
+
+```bash
+# Single logo
+uv run jg tidy optimize-logo src/jg/coop/images/logos/foo.svg
+
+# Dry run (see what would change)
+python scripts/optimize_logo.py src/jg/coop/images/logos/foo.svg --dry-run
+
+# All logos (batch)
+for f in src/jg/coop/images/logos/*.svg; do
+  python scripts/optimize_logo.py "$f"
+done
+```
+
+What it does:
+- Deep ungroup (preserves masks/clips)
+- Scale to 4980px, crop to fit, center on page
+- Set viewBox to 5000px width, even height with ~15px margin
+- Minify with SVGO (precision 0)
+
+Config: `svgo.config.logos.cjs` in project root.
+
+## Simple workflow for adding SVGs
 
 1. Open in Inkscape.
 2. Ctrl+Shift+R (crop to fit)
 
-## Alternative workflow for adding SVGs that are minified and easier to work with later
+## Full manual workflow for adding SVGs that are minified and easier to work with later
 
 1. Open in Inkscape.
 2. Ctrl+Shift+D (document properties)

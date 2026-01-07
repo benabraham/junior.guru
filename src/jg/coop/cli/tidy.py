@@ -163,6 +163,18 @@ def optimize_svg():
             )
 
 
+@main.command()
+@click.argument("svg_path", type=click.Path(exists=True))
+def optimize_logo(svg_path):
+    """Process a logo SVG through full optimization workflow (Inkscape + SVGO)."""
+    try:
+        subprocess.run(
+            ["python", "scripts/optimize_logo.py", svg_path], check=True
+        )
+    except subprocess.CalledProcessError:
+        raise click.Abort()
+
+
 def kilobytes(size) -> int:
     return math.ceil(size / 1000)
 
